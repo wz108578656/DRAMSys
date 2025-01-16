@@ -865,7 +865,7 @@ bool TracePlot::eventFilter(QObject* object, QEvent* event)
         {
             QWheelEvent* wheelEvent = static_cast<QWheelEvent*>(event);
             traceTime zoomCenter =
-                static_cast<traceTime>(this->invTransform(xBottom, wheelEvent->position().x()));
+                static_cast<traceTime>(this->invTransform(xBottom, wheelEvent->pos().x()));
 
             (wheelEvent->angleDelta().y() > 0) ? zoomIn(zoomCenter) : zoomOut(zoomCenter);
 

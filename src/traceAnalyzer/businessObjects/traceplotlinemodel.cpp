@@ -593,10 +593,11 @@ bool AbstractTracePlotLineModel::dropMimeData(
         {
             LineType type;
             QString label;
-            unsigned int rank, group, bank;
+            unsigned int type_i, rank, group, bank;
             bool isCollapsed;
 
-            dataStream >> type >> label >> rank >> group >> bank >> isCollapsed;
+            dataStream >> type_i >> label >> rank >> group >> bank >> isCollapsed;
+            type = static_cast<LineType>(type_i);
 
             std::shared_ptr<Node> node;
 
